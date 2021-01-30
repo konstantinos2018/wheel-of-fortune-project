@@ -36,3 +36,9 @@ class WOFHumanPlayer(WOFPlayer):
         return input(prompt)
 
 # Write the WOFComputerPlayer class definition (part C) here
+class WOFComputerPlayer(WOFPlayer):
+    SORTED_FREQUENCIES = 'ZQXJKVBPYGFWMUCLDRHSNIOATE'
+
+    def __init__(self, name, difficulty):
+        super().__init__(name)
+        self.difficulty = difficulty
