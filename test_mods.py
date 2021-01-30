@@ -31,3 +31,9 @@ class TestWOFPlayer(unittest.TestCase):
         p.addPrize(500)
         expected = [500]
         self.assertEqual(p.prizes, expected)
+    
+    def test_str(self):
+        p = WOFPlayer('Kostas')
+        p.addMoney(10)
+        expected = 'Kostas ($10)'
+        self.assertEqual(p.__str__(), expected)

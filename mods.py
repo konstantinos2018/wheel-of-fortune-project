@@ -20,6 +20,9 @@ class WOFPlayer:
     
     def addPrize(self, prize):
         self.prizes.append(prize)
+    
+    def __str__(self):
+        return '{0} (${1})'.format(self.name, self.prizeMoney)
 # Write the WOFHumanPlayer class definition (part B) here
 
 # Write the WOFComputerPlayer class definition (part C) here
