@@ -13,7 +13,7 @@ class WOFPlayer:
         try:
             self.prizeMoney += amt
         except TypeError as e:
-            print('TypeError: {}'.format(str(e)))
+            print('TypeError: {}: Input should be numeric'.format(str(e)))
 
 # Write the WOFHumanPlayer class definition (part B) here
 
