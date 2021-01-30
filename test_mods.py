@@ -12,3 +12,8 @@ class TestWOFPlayer(unittest.TestCase):
         p.addMoney(10)
         expected = 10
         self.assertEqual(p.prizeMoney, expected)
+    def test_addMoney_2(self):
+        p = WOFPlayer('Kostas')
+        p.addMoney('g')
+        expected = 0
+        self.assertEqual(p.prizeMoney, expected)
