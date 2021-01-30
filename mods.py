@@ -15,6 +15,8 @@ class WOFPlayer:
         except TypeError as e:
             print('TypeError: {}: Input should be numeric'.format(str(e)))
 
+    def goBankrupt(self):
+        self.prizeMoney = 0
 # Write the WOFHumanPlayer class definition (part B) here
 
 # Write the WOFComputerPlayer class definition (part C) here
