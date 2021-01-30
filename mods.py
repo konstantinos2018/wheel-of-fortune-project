@@ -12,7 +12,8 @@ class WOFPlayer:
     def addMoney(self, amt):
         try:
             self.prizeMoney += amt
-        
+        except TypeError as e:
+            print('TypeError: {}'.format(str(e)))
 
 # Write the WOFHumanPlayer class definition (part B) here
 
