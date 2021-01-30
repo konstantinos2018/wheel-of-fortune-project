@@ -17,6 +17,9 @@ class WOFPlayer:
 
     def goBankrupt(self):
         self.prizeMoney = 0
+    
+    def addPrize(self, prize):
+        self.prizes.append(prize)
 # Write the WOFHumanPlayer class definition (part B) here
 
 # Write the WOFComputerPlayer class definition (part C) here
