@@ -1,3 +1,5 @@
+import random
+
 VOWEL_COST = 250
 LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 VOWELS = 'AEIOU'
@@ -42,3 +44,11 @@ class WOFComputerPlayer(WOFPlayer):
     def __init__(self, name, difficulty):
         super().__init__(name)
         self.difficulty = difficulty
+    
+    def smartCoinFlip(self):
+        n = random.randint(1, 10)
+
+        if n > self.difficulty:
+            return True
+        else:
+            return False

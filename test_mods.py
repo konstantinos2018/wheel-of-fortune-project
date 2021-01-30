@@ -1,6 +1,7 @@
 import unittest
+import random
 
-from mods import WOFPlayer
+from mods import WOFPlayer, WOFComputerPlayer
 
 class TestWOFPlayer(unittest.TestCase):
     def test_init(self):
@@ -37,3 +38,11 @@ class TestWOFPlayer(unittest.TestCase):
         p.addMoney(10)
         expected = 'Kostas ($10)'
         self.assertEqual(p.__str__(), expected)
+
+class TestWOFComputerPlayer(unittest.TestCase):
+    def test_smartCoinFlip(self):
+        p = WOFComputerPlayer('Kostas', 5)
+        expected = False
+        random.seed(a=1)
+        self.assertEqual(p.smartCoinFlip(), expected)
+
