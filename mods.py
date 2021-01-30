@@ -52,3 +52,14 @@ class WOFComputerPlayer(WOFPlayer):
             return True
         else:
             return False
+    
+    def getPossibleLetters(self, guessed):
+                
+        if self.prizeMoney < VOWEL_COST:
+            possible_letters = set(LETTERS) - set(guessed) - set(VOWELS)
+        else:
+            possible_letters = set(LETTERS) - set(guessed)
+        
+        return list(possible_letters)
+            
+            
