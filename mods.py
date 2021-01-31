@@ -65,12 +65,15 @@ class WOFComputerPlayer(WOFPlayer):
         return possible_letters
     
     def getMove(self, category, obscuredPhrase, guessed):
-        if len(self.getPossibleLetters(guessed)) == 0:
+
+        possible_letters = self.getPossibleLetters(guessed)
+        if len(possible_letters) == 0:
             return 'pass'
-            
-        elif self.smartCoinFlip():
-            return self.SORTED_FREQUENCIES[-1]
-            
-        else:
-            return random.choice(self.getPossibleLetters(guessed))
-            
+        else:    
+            if self.smartCoinFlip():
+                for freq in self.SORTED_FREQUENCIES[::-1]:
+                    if freq in possible_letters:
+                        return freq
+
+            else:
+                return random.choice(possible_letters)
