@@ -47,3 +47,24 @@ class TestWOFComputerPlayer(unittest.TestCase):
         random.seed(a=1)
         self.assertEqual(p.smartCoinFlip(), expected)
 
+
+    def test_getPossibleLetters_1(self):
+        expected  = [letter for letter in 'FGHJKLMNPQRSTVWXYZ']
+        p = WOFComputerPlayer('Kostas', 5)
+        guessed = 'a b c d'.split()
+        self.assertEqual(p.getPossibleLetters(guessed), expected)
+    
+    def test_getPossibleLetters_2(self):
+        expected  = [letter for letter in 'EFGHIJKLMNOPQRSTUVWXYZ']
+        p = WOFComputerPlayer('Kostas', 5)
+        p.addMoney(250)
+        guessed = 'a b c d'.split()
+        self.assertEqual(p.getPossibleLetters(guessed), expected)
+    
+    def test_getPossibleLetters_3(self):
+        expected  = 'pass'
+        p = WOFComputerPlayer('Kostas', 5)
+        guessed = 'A B C D E F G H I J K L M N O P Q R S T U V W X Y Z'.split()
+        self.assertEqual(p.getMove('Music', 'Hello Janis Jackson', guessed), expected)
+        
+
