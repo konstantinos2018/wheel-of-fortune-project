@@ -34,8 +34,8 @@ class WOFHumanPlayer(WOFPlayer):
         prompt += 'Phrase: {}\n'.format(obscuredPhrase)
         prompt += 'Guessed: {}\n\n'.format(', '.join(guessed))
         prompt += 'Guess a letter, phrase, or type \'exit\' or \'pass\':'
-
-        return input(prompt)
+        command = input(prompt)
+        return command
 
 # Write the WOFComputerPlayer class definition (part C) here
 class WOFComputerPlayer(WOFPlayer):
