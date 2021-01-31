@@ -2,6 +2,7 @@ import unittest
 import random
 
 from mods import WOFPlayer, WOFComputerPlayer
+# from mods import VOWEL_COST, LETTERS, VOWELS
 
 class TestWOFPlayer(unittest.TestCase):
     def test_init(self):
