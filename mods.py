@@ -54,13 +54,15 @@ class WOFComputerPlayer(WOFPlayer):
             return False
     
     def getPossibleLetters(self, guessed):
-                
+        if guessed:
+            guessed = ''.join(guessed).upper()
+
+        possible_letters = [letter for letter in LETTERS if letter not in guessed]
+
         if self.prizeMoney < VOWEL_COST:
-            possible_letters = set(LETTERS) - set(guessed) - set(VOWELS)
-        else:
-            possible_letters = set(LETTERS) - set(guessed)
+            possible_letters = [letter for letter in possible_letters if letter not in VOWELS]
         
-        return list(possible_letters)
+        return possible_letters
     
     def getMove(self, category, obscuredPhrase, guessed):
         if len(self.getPossibleLetters(guessed)) == 0:
